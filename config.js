@@ -340,11 +340,11 @@ const PORTFOLIO_CONFIG = {
 
 
     meta: {
-        title: "ACondeSalazar - Computer Graphics Student Portfolio",
+        title: "Arthur Conde Salazar Portfolio",
         description: "",
         keywords: ["computer graphics", "3D rendering", "portfolio"],
         author: "ACondeSalazar",
-        image: "assets/portfolio-preview.jpg"
+        image: "assets/preview.png"
     }
 };
 
