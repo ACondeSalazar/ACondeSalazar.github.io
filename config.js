@@ -1,0 +1,354 @@
+const PORTFOLIO_CONFIG = {
+    // Personal Information
+    personal: {
+        name: "Arthur Conde Salazar",
+        title: "Computer Graphics Student in Montpellier",
+        location: "Montpellier",
+        email: "arthur.condesalazar@gmail.com",
+        resume: "assets/CV_Arthur_Conde_Salazar.pdf",
+        
+        internshipMessage: {
+            text: "I am currently seeking a 6-month end-of-study internship in computer graphics starting january 2026 !",
+            show: true
+        },
+        
+        // About section
+        bio: {
+            greeting: "Where to find and contact me :",
+            description: [""]
+        },
+        
+        // Skills and interests
+        profile: {
+            role: "Computer Graphics Student",
+            interests: [
+                "Real-time Rendering",
+                "Image Processing"
+            ],
+            skills: {
+                languages: ["C++","GLSL", "Python"],
+                tools: [ "OpenGL", "Godot" ],
+            },
+            education: {
+                degree: "Master IMAGINE",
+                at : "Faculté des sciences de Montpellier",
+                status: "On going (M2)"
+            }
+        }
+    },
+
+    // Social Links
+    social: {
+        github: "https://github.com/ACondeSalazar",
+        linkedin: "https://linkedin.com/in/arthur-conde-salazar",
+    },
+    projects: [
+        {
+            id: "asciiraster",
+            title: "Rasterizer and ASCII renderer",
+            shortDescription: "in Real Time Rasterizer from scratch, rendered in the terminal (on going)",
+            fullDescription: "This project is made of 2 part : <br> - a CPU rasterizer from scratch with only a single image saving library <br> - a Terminal Renderer to print image in the terminal",
+            detailedDescription: [],
+            technologies: ["C++"],
+            thumbnail: "assets/asciiraster/asciithumb2.png",
+            media: [
+                {
+                    type: "image",
+                    src: "assets/asciiraster/rasterbase.png",
+                    caption: "Triangle Meshes rasterized"
+                },
+                {
+                    type: "image",
+                    src: "assets/asciiraster/asciithumb2.png",
+                    caption: "Rasterized Triangles Meshes rendered in the terminal"
+                }
+            ],
+            features: [
+                "Triangle Mesh Rasterization",
+                "Obj model loader",
+                "Image processing",
+                "Print Image in terminal using characters"
+            ],
+            references: [
+                {
+                    title: "Acerola - I Tried Turning Games Into Text",
+                    url: "https://www.youtube.com/watch?v=gg40RWiaHRY",
+                    type: "Youtube"
+                },
+                {
+                    title: "Scratch a pixel - Rasterization",
+                    url: "https://www.scratchapixel.com/lessons/3d-basic-rendering/rasterization-practical-implementation/overview-rasterization-algorithm.html",
+                    type: "Article"
+                }
+            ],
+            github: "https://github.com/ACondeSalazar/ascii_rasterizer",
+            featured: true
+        },
+        {
+            id: "blackhole",
+            title: "Raymarched Blackhole",
+            shortDescription: "A simple raymarched black hole simulation",
+            fullDescription: "A black hole simulation to better understand raymarching",
+            detailedDescription: [],
+            technologies: ["C++", "Raylib", "GLSL Shaders"],
+            thumbnail: "assets/blackhole/thumbbh.png",
+            media: [
+                {
+                    type: "video",
+                    src: "assets/blackhole/bh.mp4",
+                    caption: "Video"
+                },
+                {
+                    type: "image",
+                    src: "assets/blackhole/bh1.png",
+                    caption: ""
+                },
+                {
+                    type: "image",
+                    src: "assets/blackhole/bh2.png",
+                    caption: ""
+                }
+            ],
+            features: [
+                "Raymarching shader",
+                "Gravity affected rays"
+            ],
+            references: [
+                {
+                    title: "Simulating Black Holes in C++",
+                    url: "https://www.youtube.com/watch?v=8-B6ryuBkCM&t=531s",
+                    type: "Youtube"
+                },
+                {
+                    title: "Inigo Quilez Raymarching shader",
+                    url: "https://www.shadertoy.com/view/Xds3zN",
+                    type: "ShaderToy"
+                }
+            ],
+            github: "https://github.com/ACondeSalazar/black-hole",
+            featured: true
+        },
+        {
+            id: "gameengine",
+            title: "Luigi Engine",
+            shortDescription: "A Game Engine made using C++ and OpenGL",
+            fullDescription: "A custom OpenGL-based Game Engine featuring an Entity Component System (ECS), physically-based rendering (PBR), vehicle physics and a track editor. Built from scratch in C++ with modern OpenGL and ImGui.",
+            detailedDescription: [],
+            technologies: ["C++", "OpenGL", "GLSL Shaders"],
+            thumbnail: "assets/luigiengine/playground.png",
+            media: [
+                {
+                    type: "video",
+                    src: "assets/luigiengine/pbr.mp4",
+                    caption: "PBR materials showcase with different metallic and roughness values"
+                },
+                {
+                    type: "video",
+                    src: "assets/luigiengine/car_compressed.mp4",
+                    caption: "Physics !"
+                },
+                {
+                    type: "image",
+                    src: "assets/luigiengine/rainbow.png",
+                    caption: "The rainbow road using the track editor"
+                }
+            ],
+            features: [
+                "Entity Component System (ECS)",
+                "Physically-Based Rendering (PBR)",
+                "Vehicle and box physics",
+                "Track editor using splines"
+            ],
+            collaborators: [
+                {
+                    name: "Mateusz Birembaut",
+                    github: "https://github.com/Mateusz-Birembaut",
+                    role: ""
+                },
+                {
+                    name: "Rémy Guibert",
+                    github: "https://github.com/Rashnain",
+                    role: ""
+                }
+            ],
+            references: [
+                {
+                    title: "Learn OpenGL",
+                    url: "https://learnopengl.com/",
+                    type: "Tutorial"
+                },
+                {
+                    title: "Allen Chou - Game physics guide",
+                    url: "https://allenchou.net/game-physics-series/",
+                    type: "Tutorial"
+                }
+            ],
+            github: "https://github.com/Rashnain/LuigiEngine",
+            featured: true
+        },
+        {
+            id: "ocean",
+            title: "Upgraded Ocean Simulation",
+            shortDescription: "Implementation of a procedural texture generation technique to improve ocean simulations",
+            fullDescription: "Starting from a fork of an ocean simulation made with the Tessendorf method (which is periodic), we implemented tiling and blending of an ocean heightmap to make the ocean non-periodic.",
+            detailedDescription: [],
+            technologies: ["Godot", "GLSL Compute Shaders"],
+            thumbnail: "assets/ocean/thumb.png",
+            media: [
+                {
+                    type: "image",
+                    src: "assets/ocean/base.png",
+                    caption: "Original ocean heightmap"
+                },
+                {
+                    type: "image",
+                    src: "assets/ocean/tb.png",
+                    caption: "Heightmap after tiling and blending"
+                },
+                {
+                    type: "video",
+                    src: "assets/ocean/showcase.mp4",
+                    caption: "Showcase"
+                }
+            ],
+            features: [
+                "Tiling and blending",
+                "Wave orientation",
+            ],
+            collaborators: [
+                {
+                    name: "Théo Reynier",
+                    github: "https://github.com/RTheoGH",
+                    role: ""
+                },
+                {
+                    name: "Andrew Mansour",
+                    github: "https://github.com/Sloth-King",
+                    role: ""
+                },
+                {
+                    name: "Killian Viguier",
+                    github: "https://github.com/VigKillian",
+                    role: ""
+                },
+            ],
+            references: [
+                {
+                    title: "Simulating Ocean Water - Jerry Tessendorf",
+                    url: "https://people.computing.clemson.edu/~jtessen/reports/papers_files/coursenotes2004.pdf",
+                    type: "Paper"
+                },
+                {
+                    title: "Fast orientable aperiodic ocean synthesis using tiling and blending",
+                    url: "https://www.ubisoft.com/en-us/studio/laforge/news/5WHMK3tLGMGsqhxmWls1Jw/making-waves-in-ocean-surface-rendering-using-tiling-and-blending",
+                    type: "Paper"
+                }
+            ],
+            github: "https://github.com/RTheoGH/TER-Ocean",
+            featured: true
+        },
+        {
+            id: "compression",
+            title: "Image Compression App",
+            shortDescription: "Implementation of compression algorithms imitating JPEG and JPEG2000",
+            fullDescription: "Implementation of compression methods imitating the algorithms used in JPEG and JPEG2000 files.",
+            detailedDescription: [],
+            technologies: ["C++", "SDL3", "ImGui"],
+            thumbnail: "assets/compression/thumb.png",
+            media: [
+                
+                {
+                    type: "image",
+                    src: "assets/compression/jpeg.png",
+                    caption: "JPEG like compression results"
+                },
+                {
+                    type: "image",
+                    src: "assets/compression/jpeg2000.png",
+                    caption: "JPEG 200 like compression results"
+                },
+                {
+                    type: "image",
+                    src: "assets/compression/compressionbest.png",
+                    caption: "Algortihms comparison"
+                }
+            ],
+            features: [
+                "4K image compression",
+                "Discrete Cosine Transform (DCT)",
+                "Discrete Wavelet Transform (DWT)",
+                "Huffman Encoding",
+                "LZ77 Encoding"
+                
+            ],
+            collaborators:[
+                {
+                    name: "Thimothée Bonetti",
+                    github: "https://github.com/gubace",
+                    role: ""
+                }
+            ],
+            references: [
+                {
+                    title: "JPEG Image Compression Algorithm",
+                    url: "https://www.researchgate.net/profile/Muzhir-Al-Ani/publication/268523100_THE_JPEG_IMAGE_COMPRESSION_ALGORITHM/links/549f251f0cf267bdb8fdbb89/THE-JPEG-IMAGE-COMPRESSION-ALGORITHM.pdf",
+                    type: "Paper"
+                },
+                {
+                    title: "JPEG2000 : Higly Scalable Image Compression",
+                    url: "https://www2.engr.arizona.edu/~bilgin/publications/ITCC2001.pdf",
+                    type: "Paper"
+                }
+            ],
+            github: "https://github.com/ACondeSalazar/Projet_Compression_M1",
+            featured: true
+        }
+    ],
+
+    // Theme Configuration
+    theme: {
+        // Color scheme
+        colors: {
+            primary: "#0a0a0a",        // Main background
+            secondary: "#111111",      // Secondary background
+            accent: "#1a1a1a",         // Accent background
+            terminal: "#0c1021",       // Terminal background
+            matrixGreen: "rgba(0, 210, 52, 1)",    // Primary accent color
+            neonBlue: "#00d4ff",       // Secondary accent color
+            neonPurple: "#a855f7",     // Tertiary accent color
+            textPrimary: "#ffffff",    // Primary text
+            textSecondary: "#b0b0b0",  // Secondary text
+            textMuted: "#606060",      // Muted text
+            border: "#333333"          // Border color
+        },
+        
+        // Typography
+        fonts: {
+            mono: "'JetBrains Mono', monospace",
+            sans: "'Inter', sans-serif"
+        },
+        
+
+        animations: {
+            duration: "0.3s",
+            easing: "cubic-bezier(0.4, 0, 0.2, 1)",
+            reducedMotion: true
+        },
+        
+        effects: {}
+    },
+
+
+    meta: {
+        title: "ACondeSalazar - Computer Graphics Student Portfolio",
+        description: "",
+        keywords: ["computer graphics", "3D rendering", "portfolio"],
+        author: "ACondeSalazar",
+        image: "assets/portfolio-preview.jpg"
+    }
+};
+
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = PORTFOLIO_CONFIG;
+}

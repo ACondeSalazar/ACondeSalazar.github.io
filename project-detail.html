@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Project Details - ACondeSalazar</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="project-detail.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="config.js"></script>
+</head>
+<body>
+    
+    <!-- Back Navigation -->
+    <nav class="back-nav">
+        <div class="nav-container">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Portfolio</span>
+            </a>
+            <div class="breadcrumb">
+                <span>Portfolio</span>
+                <i class="fas fa-chevron-right"></i>
+                <span id="project-breadcrumb">Project</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Header -->
+    <header class="project-header">
+        <div class="header-content">
+            <div class="project-meta">
+                <h1 id="project-title">Project Title</h1>
+                <p id="project-subtitle">Short description</p>
+                
+                <div class="project-links">
+                    <a href="#" id="github-link" class="btn-link" target="_blank">
+                        <i class="fab fa-github"></i> View Code
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img id="hero-img" src="" alt="Project Hero">
+            </div>
+        </div>
+    </header>
+
+    <!-- Project Content -->
+    <main class="project-content">
+        <!-- Overview Section -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2><i class="fas fa-info-circle"></i> Overview</h2>
+            </div>
+            <div class="overview-content">
+                <div id="project-description" class="description-text">
+                    <!-- Description paragraphs will be inserted here -->
+                </div>
+                
+                <div class="features-tech-container">
+                    <div class="features-list">
+                        <h3>Key Features</h3>
+                        <ul id="features-list">
+                            <!-- Features will be inserted here -->
+                        </ul>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <h3>Technology Stack</h3>
+                        <div class="tech-grid" id="tech-stack">
+                            <!-- Tech stack will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Collaborators and References Section - Full Width -->
+            <div class="collab-ref-container">
+                <div id="collaborators-section" class="collaborators-section" style="display: none;">
+                    <h3>Collaborators</h3>
+                    <div class="collaborators-grid" id="collaborators-list">
+                        <!-- Collaborators will be inserted here -->
+                    </div>
+                </div>
+                
+                <div id="references-section" class="references-section" style="display: none;">
+                    <h3>References</h3>
+                    <div class="references-list" id="references-list">
+                        <!-- References will be inserted here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Media Gallery Section -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2><i class="fas fa-images"></i> Gallery</h2>
+            </div>
+            <div class="media-gallery" id="media-gallery">
+                <!-- Media items will be inserted here -->
+            </div>
+        </section>
+
+        <!-- Navigation to Other Projects -->
+        <section class="content-section">
+            <div class="section-header">
+                <h2><i class="fas fa-th-large"></i> Other Projects</h2>
+            </div>
+            <div class="other-projects" id="other-projects">
+                <!-- Other projects will be inserted here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Media Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <div class="lightbox-content">
+            <button class="lightbox-close">&times;</button>
+            <div class="lightbox-media">
+                <img id="lightbox-img" src="" alt="">
+                <video id="lightbox-video" controls style="display: none;">
+                    <source src="" type="video/mp4">
+                </video>
+            </div>
+            <div class="lightbox-caption" id="lightbox-caption"></div>
+            <div class="lightbox-nav">
+                <button id="lightbox-prev"><i class="fas fa-chevron-left"></i></button>
+                <button id="lightbox-next"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="project-detail.js"></script>
+</body>
+</html>

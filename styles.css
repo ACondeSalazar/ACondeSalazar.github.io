@@ -1,0 +1,606 @@
+/* === CSS Variables === */
+:root {
+    --primary-bg: #0a0a0a;
+    --secondary-bg: #111111;
+    --accent-bg: #1a1a1a;
+    --terminal-bg: #0c1021;
+    --matrix-green: #00ff41;
+    --neon-blue: #00d4ff;
+    --neon-purple: #a855f7;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --text-muted: #606060;
+    --border-color: #333333;
+    --success: #00ff88;
+    --warning: #ffaa00;
+    --error: #ff4444;
+    
+    --font-mono: 'JetBrains Mono', monospace;
+    --font-sans: 'Inter', sans-serif;
+    
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --shadow-glow: 0 0 20px rgba(0, 255, 65, 0.3);
+    --shadow-neon: 0 0 30px rgba(0, 212, 255, 0.4);
+}
+
+/* === Base Styles === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    background: var(--primary-bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+
+
+/* === Terminal Header === */
+.terminal-header {
+    padding: 2rem 0;
+    background: linear-gradient(135deg, var(--terminal-bg) 0%, var(--secondary-bg) 100%);
+    border-bottom: 2px solid var(--matrix-green);
+    box-shadow: 0 4px 20px rgba(0, 255, 65, 0.2);
+}
+
+.terminal-window {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(12, 16, 33, 0.9);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-glow);
+}
+
+
+
+.terminal-content {
+    padding: 20px;
+    font-family: var(--font-mono);
+}
+
+
+
+.output h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, var(--matrix-green), var(--neon-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    font-family: var(--font-mono);
+}
+
+/* === Internship Banner === */
+.internship-banner {
+    background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
+    color: var(--primary-bg);
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-family: var(--font-mono);
+    font-weight: 600;
+    font-size: 0.95rem;
+    box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+    animation: pulse-glow 2s ease-in-out infinite;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.internship-banner i {
+    font-size: 1.1rem;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+}
+
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 4px 15px rgba(0, 212, 255, 0.3);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 6px 25px rgba(0, 212, 255, 0.5);
+        transform: scale(1.02);
+    }
+}
+
+/* === Navigation === */
+.nav-bar {
+    background: rgba(26, 26, 26, 0.9);
+    border-bottom: 1px solid var(--border-color);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 2rem;
+    padding: 0 2rem;
+}
+
+.nav-item {
+    padding: 1rem 1.5rem;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: var(--transition);
+    font-family: var(--font-mono);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.nav-item:hover {
+    color: var(--matrix-green);
+    transform: translateY(-2px);
+}
+
+.nav-item.active {
+    color: var(--matrix-green);
+    border-bottom-color: var(--matrix-green);
+    box-shadow: 0 -2px 10px rgba(0, 255, 65, 0.3);
+}
+
+/* === Main Content === */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-family: var(--font-mono);
+    font-size: 2rem;
+    color: var(--matrix-green);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.loading-bar {
+    width: 200px;
+    height: 4px;
+    background: var(--accent-bg);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.loading-progress {
+    height: 100%;
+    background: linear-gradient(90deg, var(--matrix-green), var(--neon-blue));
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.3s ease-out;
+}
+
+.loading-progress.animate {
+    animation: loadingProgress 2.5s ease-out forwards;
+}
+
+.loading-progress.complete {
+    animation: loadingComplete 1s ease-out forwards;
+}
+
+@keyframes loadingProgress {
+    0% { width: 0%; }
+    25% { width: 20%; }
+    50% { width: 45%; }
+    75% { width: 80%; }
+    90% { width: 95%; }
+    100% { width: 100%; }
+}
+
+@keyframes loadingComplete {
+    0% { 
+        width: 100%; 
+        opacity: 1;
+        transform: scaleX(1);
+    }
+    70% { 
+        width: 100%; 
+        opacity: 1;
+        transform: scaleX(1);
+    }
+    100% { 
+        width: 100%; 
+        opacity: 0;
+        transform: scaleX(0.8);
+    }
+}
+
+/* === Projects Grid === */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--secondary-bg);
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: var(--transition);
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-neon);
+    border-color: var(--neon-blue);
+}
+
+.project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--matrix-green), var(--neon-blue), var(--neon-purple));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover::before {
+    transform: scaleX(1);
+}
+
+.project-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.btn-view {
+    background: var(--matrix-green);
+    color: var(--primary-bg);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.btn-view:hover {
+    background: var(--neon-blue);
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding: 1.5rem;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.project-info h3 {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.project-info p {
+    color: var(--text-secondary);
+    margin-bottom: 1rem;
+    line-height: 1.5;
+    flex-grow: 1;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: auto;
+}
+
+.tag {
+    background: rgba(0, 255, 65, 0.1);
+    color: var(--matrix-green);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-family: var(--font-mono);
+    border: 1px solid rgba(0, 255, 65, 0.3);
+}
+
+/* === About Section === */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.code-block {
+    background: var(--terminal-bg);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    overflow: hidden;
+    box-shadow: var(--shadow-glow);
+}
+
+.code-header {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.8rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.file-name {
+    color: var(--matrix-green);
+    font-family: var(--font-mono);
+    font-weight: 500;
+}
+
+.file-type {
+    color: var(--text-muted);
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+}
+
+.code-block pre {
+    padding: 1.5rem;
+    font-family: var(--font-mono);
+    font-size: 1.1rem;
+    line-height: 1.6;
+    overflow-x: auto;
+}
+
+.code-block code {
+    color: var(--text-primary);
+}
+
+.about-text {
+    padding: 1rem 0;
+}
+
+.about-text h3 {
+    color: var(--neon-blue);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.about-text p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+/* === Contact Grid in About Section === */
+.about-text .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.about-text .contact-card {
+    background: var(--secondary-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.about-text .contact-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 65, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+.about-text .contact-card:hover::before {
+    left: 100%;
+}
+
+.about-text .contact-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--matrix-green);
+    box-shadow: var(--shadow-glow);
+}
+
+.about-text .contact-card i {
+    font-size: 2rem;
+    color: var(--matrix-green);
+    margin-bottom: 0.8rem;
+    transition: var(--transition);
+}
+
+.about-text .contact-card:hover i {
+    color: var(--neon-blue);
+    transform: scale(1.1);
+}
+
+.about-text .contact-card h4 {
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.about-text .contact-card p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+    .nav-container {
+        padding: 0 1rem;
+        gap: 1rem;
+    }
+    
+    .nav-item {
+        padding: 0.8rem 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .main-content {
+        padding: 2rem 1rem;
+    }
+    
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .terminal-content {
+        padding: 15px;
+    }
+    
+    .output h1 {
+        font-size: 2rem;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 1rem;
+    }
+    
+    .modal-body {
+        padding: 1.5rem;
+    }
+    
+    .project-links {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .terminal-header {
+        padding: 1rem 0;
+    }
+    
+    .output h1 {
+        font-size: 1.5rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .internship-banner {
+        font-size: 0.85rem;
+        padding: 0.6rem 1.2rem;
+        margin-bottom: 1rem;
+    }
+    
+    .internship-banner i {
+        font-size: 1rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .nav-item span {
+        display: none;
+    }
+}
