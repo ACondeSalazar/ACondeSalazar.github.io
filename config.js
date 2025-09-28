@@ -3,7 +3,7 @@ const PORTFOLIO_CONFIG = {
     personal: {
         name: "Arthur Conde Salazar",
         title: "Computer Graphics Student in Montpellier",
-        location: "Montpellier",
+        location: "",
         email: "arthur.condesalazar@gmail.com",
         resume: "assets/CV_Arthur_Conde_Salazar.pdf",
         
@@ -13,7 +13,7 @@ const PORTFOLIO_CONFIG = {
         },
         
         bio: {
-            greeting: "Where to find and contact me :",
+            greeting: "",
             description: [""]
         },
         
@@ -42,9 +42,9 @@ const PORTFOLIO_CONFIG = {
     projects: [
         {
             id: "asciiraster",
-            title: "Rasterizer and ASCII renderer",
+            title: "Rasterizer and ASCII renderer from scratch",
             shortDescription: "in Real Time Rasterizer from scratch, rendered in the terminal (on going)",
-            fullDescription: "This project is made of 2 part : <br> - a CPU rasterizer from scratch with only a single image saving library <br> - a Terminal Renderer to print image in the terminal",
+            fullDescription: "This project is made of 2 part : <br> - a CPU rasterizer from scratch with only a single image saving library <br> - a Terminal Renderer to print images in the terminal",
             detailedDescription: [],
             technologies: ["C++"],
             thumbnail: "assets/asciiraster/asciithumb2.png",
@@ -85,7 +85,7 @@ const PORTFOLIO_CONFIG = {
             id: "blackhole",
             title: "Raymarched Blackhole",
             shortDescription: "A simple raymarched black hole simulation",
-            fullDescription: "A black hole simulation to better understand raymarching",
+            fullDescription: "A black hole simulation to better understand raymarching. The rays are affected by the black hole mass to produce the space distortion effect.",
             detailedDescription: [],
             technologies: ["C++", "Raylib", "GLSL Shaders"],
             thumbnail: "assets/blackhole/thumbbh.png",
@@ -185,9 +185,9 @@ const PORTFOLIO_CONFIG = {
         },
         {
             id: "ocean",
-            title: "Upgraded Ocean Simulation",
+            title: "Better Ocean Simulation",
             shortDescription: "Implementation of a procedural texture generation technique to improve ocean simulations",
-            fullDescription: "Starting from a fork of an ocean simulation made with the Tessendorf method (which is periodic), we implemented tiling and blending of an ocean heightmap to make the ocean non-periodic.",
+            fullDescription: "Oceans are often simulated through the creation of a heightmap using the Tessendorf method, however this method introduces periodicity to the ocean surface, breaking the immersion. <br> I implemented the tiling of blending of the ocean heightmap to procedurally increase the size of the heightmap and make it non periodic.",
             detailedDescription: [],
             technologies: ["Godot", "GLSL Compute Shaders"],
             thumbnail: "assets/ocean/thumb.png",
