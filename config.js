@@ -12,13 +12,11 @@ const PORTFOLIO_CONFIG = {
             show: true
         },
         
-        // About section
         bio: {
             greeting: "Where to find and contact me :",
             description: [""]
         },
         
-        // Skills and interests
         profile: {
             role: "Computer Graphics Student",
             interests: [
@@ -37,7 +35,6 @@ const PORTFOLIO_CONFIG = {
         }
     },
 
-    // Social Links
     social: {
         github: "https://github.com/ACondeSalazar",
         linkedin: "https://linkedin.com/in/arthur-conde-salazar",
@@ -132,7 +129,7 @@ const PORTFOLIO_CONFIG = {
             id: "gameengine",
             title: "Luigi Engine",
             shortDescription: "A Game Engine made using C++ and OpenGL",
-            fullDescription: "A custom OpenGL-based Game Engine featuring an Entity Component System (ECS), physically-based rendering (PBR), vehicle physics and a track editor. Built from scratch in C++ with modern OpenGL and ImGui.",
+            fullDescription: "A custom OpenGL-based Game Engine featuring an Entity Component System (ECS), physically-based rendering (PBR), vehicle physics and a track editor. Built from scratch in C++ with modern OpenGL and ImGui. <br> I was in charge of the ECS and the physics.",
             detailedDescription: [],
             technologies: ["C++", "OpenGL", "GLSL Shaders"],
             thumbnail: "assets/luigiengine/playground.png",
@@ -313,7 +310,7 @@ const PORTFOLIO_CONFIG = {
             secondary: "#111111",      // Secondary background
             accent: "#1a1a1a",         // Accent background
             terminal: "#0c1021",       // Terminal background
-            matrixGreen: "rgba(0, 210, 52, 1)",    // Primary accent color
+            matrixGreen: "#666666",        // Neutral gray accent color
             neonBlue: "#00d4ff",       // Secondary accent color
             neonPurple: "#a855f7",     // Tertiary accent color
             textPrimary: "#ffffff",    // Primary text

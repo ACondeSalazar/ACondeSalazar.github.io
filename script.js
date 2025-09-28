@@ -78,7 +78,7 @@ class Portfolio {
                 <img src="${project.thumbnail}" alt="${project.title}" loading="lazy">
                 <div class="project-overlay">
                     <button class="btn-view" data-project="${project.id}">
-                        <i class="fas fa-eye"></i> View Details
+                        View Details
                     </button>
                 </div>
             </div>
@@ -106,24 +106,51 @@ class Portfolio {
             }
         });
         
-        article.addEventListener('mouseenter', () => {
-            this.animateCardHover(article, true);
-        });
-        
-        article.addEventListener('mouseleave', () => {
-            this.animateCardHover(article, false);
-        });
+        // Hover animations completely disabled for clean design
         
         return article;
     }
 
     updateAboutSection() {
-        // Update profile JSON
-        const codeBlock = document.querySelector('.code-block pre code');
-        if (codeBlock) {
-            const profileJson = JSON.stringify(this.config.personal.profile, null, 2);
-            codeBlock.textContent = profileJson;
-            // Removed typewriter effect to prevent corruption when switching tabs quickly
+        // Update profile information in professional layout
+        const profile = this.config.personal.profile;
+        
+        // Update name
+        const nameElement = document.getElementById('profile-name');
+        if (nameElement) nameElement.textContent = this.config.personal.name;
+        
+        // Update interests
+        const interestsElement = document.getElementById('profile-interests');
+        if (interestsElement && profile.interests) {
+            interestsElement.innerHTML = profile.interests
+                .map(interest => `<li>${interest}</li>`)
+                .join('');
+        }
+        
+        // Update languages
+        const languagesElement = document.getElementById('profile-languages');
+        if (languagesElement && profile.skills.languages) {
+            languagesElement.innerHTML = profile.skills.languages
+                .map(lang => `<li>${lang}</li>`)
+                .join('');
+        }
+        
+        // Update tools
+        const toolsElement = document.getElementById('profile-tools');
+        if (toolsElement && profile.skills.tools) {
+            toolsElement.innerHTML = profile.skills.tools
+                .map(tool => `<li>${tool}</li>`)
+                .join('');
+        }
+        
+        // Update education
+        const educationElement = document.getElementById('profile-education');
+        if (educationElement && profile.education) {
+            educationElement.innerHTML = `
+                <p><strong>${profile.education.degree}</strong></p>
+                <p>${profile.education.at}</p>
+                <p><em>${profile.education.status}</em></p>
+            `;
         }
         
         // Update about text
@@ -163,22 +190,13 @@ class Portfolio {
         
         // Email
         if (this.config.personal.email) {
-            contactGrid.appendChild(this.createContactCard('fas fa-envelope', 'Email', 'Get in touch', `mailto:${this.config.personal.email}`));
+            contactGrid.appendChild(this.createContactCard('fas fa-envelope', 'Email', 'Contact me !', `mailto:${this.config.personal.email}`));
         }
         
-        // Resume
         if (this.config.personal.resume) {
-            contactGrid.appendChild(this.createContactCard('fas fa-file-pdf', 'Resume', 'Download CV', this.config.personal.resume));
+            contactGrid.appendChild(this.createContactCard('fas fa-file-pdf', 'Resume', 'Download', this.config.personal.resume));
         }
-        
-        // Optional social links
-        if (this.config.social.artstation) {
-            contactGrid.appendChild(this.createContactCard('fab fa-artstation', 'ArtStation', 'View my art', this.config.social.artstation));
-        }
-        
-        if (this.config.social.youtube) {
-            contactGrid.appendChild(this.createContactCard('fab fa-youtube', 'YouTube', 'Watch tutorials', this.config.social.youtube));
-        }
+
     }
 
     createContactCard(iconClass, title, description, href) {
@@ -221,7 +239,7 @@ class Portfolio {
         root.style.setProperty('--secondary-bg', colors.secondary);
         root.style.setProperty('--accent-bg', colors.accent);
         root.style.setProperty('--terminal-bg', colors.terminal);
-        root.style.setProperty('--matrix-green', colors.matrixGreen);
+        root.style.setProperty('--matrix-green', '#666666');
         root.style.setProperty('--neon-blue', colors.neonBlue);
         root.style.setProperty('--neon-purple', colors.neonPurple);
         root.style.setProperty('--text-primary', colors.textPrimary);
@@ -259,16 +277,7 @@ class Portfolio {
             });
         });
 
-        // Project card hover effects
-        document.querySelectorAll('.project-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                this.animateCardHover(card, true);
-            });
-            
-            card.addEventListener('mouseleave', () => {
-                this.animateCardHover(card, false);
-            });
-        });
+        // Project card hover effects completely disabled for clean design
     }
 
     switchSection(sectionId) {
@@ -307,14 +316,9 @@ class Portfolio {
     animateProjectsGrid() {
         const cards = document.querySelectorAll('.project-card');
         cards.forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(50px)';
-            
-            setTimeout(() => {
-                card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, index * 100);
+            // All cards appear instantly - no staggered animation
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
         });
     }
 
@@ -323,14 +327,9 @@ class Portfolio {
     animateContactCards() {
         const cards = document.querySelectorAll('.about-text .contact-card');
         cards.forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'scale(0.8) rotateY(20deg)';
-            
-            setTimeout(() => {
-                card.style.transition = 'all 0.6s cubic-bezier(0.4, 0, 0.2, 1)';
-                card.style.opacity = '1';
-                card.style.transform = 'scale(1) rotateY(0deg)';
-            }, index * 150);
+            // All contact cards appear instantly - no staggered animation
+            card.style.opacity = '1';
+            card.style.transform = 'scale(1) rotateY(0deg)';
         });
     }
 
@@ -340,12 +339,9 @@ class Portfolio {
         const info = card.querySelector('.project-info');
         
         if (isHover) {
-            // Smooth glow effect instead of glitch
-            card.style.filter = 'drop-shadow(0 0 20px rgba(0, 255, 65, 0.4))';
-            info.style.transform = 'translateY(-2px)';
+            // No effects - completely clean hover
         } else {
-            card.style.filter = '';
-            info.style.transform = 'translateY(0)';
+            // No effects needed
         }
     }
 
@@ -402,15 +398,9 @@ class Portfolio {
             }, 2500);
         }
         
-        // Animate terminal window appearance
-        terminalWindow.style.opacity = '0';
-        terminalWindow.style.transform = 'scale(0.8) translateY(-50px)';
-        
-        setTimeout(() => {
-            terminalWindow.style.transition = 'all 0.8s cubic-bezier(0.4, 0, 0.2, 1)';
-            terminalWindow.style.opacity = '1';
-            terminalWindow.style.transform = 'scale(1) translateY(0)';
-        }, 200);
+        // Terminal window loads instantly - no animation
+        terminalWindow.style.opacity = '1';
+        terminalWindow.style.transform = 'scale(1) translateY(0)';
 
         // Matrix background effect removed for cleaner design
     }
@@ -486,51 +476,21 @@ document.addEventListener('DOMContentLoaded', () => {
         particleSystem.update();
     }, 16);
     
-    // Add smooth hover effects
+    // All hover effects removed for instant, snappy response
     const style = document.createElement('style');
     style.textContent = `
-        .project-card {
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        .project-card:hover {
-            filter: drop-shadow(0 0 25px rgba(0, 255, 65, 0.3));
-        }
-        
-        .project-info {
-            transition: all 0.3s ease;
-        }
-        
-        .nav-item:hover {
-            text-shadow: 0 0 10px currentColor;
-        }
-        
-        .contact-card:hover {
-            background: linear-gradient(135deg, var(--secondary-bg), rgba(0, 255, 65, 0.05));
-        }
-        
-        .btn-view:hover {
-            transform: scale(1.05) translateY(-1px);
-            box-shadow: 0 5px 15px rgba(0, 255, 65, 0.3);
-        }
-        
-        .project-overlay {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
+        /* All transitions and animations removed for instant response */
+        *, *::before, *::after {
+            transition: none !important;
+            animation: none !important;
+            transform: none !important;
         }
     `;
     document.head.appendChild(style);
 });
 
-// Add smooth scrolling behavior
-document.documentElement.style.scrollBehavior = 'smooth';
+// Instant scrolling for snappy response
+document.documentElement.style.scrollBehavior = 'auto';
 
 // Enhanced intersection observer for animations
 const observerOptions = {

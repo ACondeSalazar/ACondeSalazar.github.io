@@ -1,5 +1,14 @@
 /* Project Detail Page Styles */
 
+/* Global rule: Kill ALL animations and transitions for instant response */
+*,
+*::before,
+*::after {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+}
+
 /* Back Navigation */
 .back-nav {
     background: rgba(26, 26, 26, 0.95);
@@ -21,19 +30,17 @@
 }
 
 .back-link {
-    color: var(--matrix-green);
+    color: var(--text-secondary);
     text-decoration: none;
     font-family: var(--font-mono);
     font-weight: 500;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    transition: var(--transition);
 }
 
 .back-link:hover {
-    color: var(--neon-blue);
-    transform: translateX(-5px);
+    color: var(--text-primary);
 }
 
 .breadcrumb {
@@ -53,9 +60,8 @@
 /* Project Header */
 .project-header {
     padding: 4rem 0;
-    background: linear-gradient(135deg, var(--terminal-bg) 0%, var(--secondary-bg) 100%);
-    border-bottom: 2px solid var(--matrix-green);
-    box-shadow: 0 4px 20px rgba(0, 255, 65, 0.2);
+    background: var(--secondary-bg);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .header-content {
@@ -71,10 +77,7 @@
 .project-meta h1 {
     font-size: 3rem;
     font-weight: 700;
-    background: linear-gradient(45deg, var(--matrix-green), var(--neon-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--text-primary);
     margin: 1rem 0;
     line-height: 1.2;
 }
@@ -94,7 +97,7 @@
 }
 
 .btn-link {
-    background: var(--matrix-green);
+    background: var(--text-secondary);
     color: var(--primary-bg);
     padding: 14px 28px;
     border-radius: 8px;
@@ -104,15 +107,12 @@
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    transition: var(--transition);
-    border: 2px solid var(--matrix-green);
+    border: 2px solid var(--text-secondary);
 }
 
 .btn-link:hover {
     background: transparent;
-    color: var(--matrix-green);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(0, 255, 65, 0.3);
+    color: var(--text-secondary);
 }
 
 .hero-image {
@@ -127,11 +127,6 @@
     width: 100%;
     height: auto;
     display: block;
-    transition: var(--transition);
-}
-
-.hero-image:hover img {
-    transform: scale(1.05);
 }
 
 /* Content Sections */
@@ -152,7 +147,7 @@
 .content-section .section-header h2 {
     font-family: var(--font-mono);
     font-size: 2rem;
-    color: var(--matrix-green);
+    color: var(--text-primary);
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -187,12 +182,11 @@
     padding: 2rem;
     border-radius: 12px;
     border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-glow);
     flex: 1;
 }
 
 .features-list h3 {
-    color: var(--neon-blue);
+    color: var(--text-primary);
     font-size: 1.3rem;
     margin-bottom: 1rem;
     font-weight: 600;
@@ -217,7 +211,7 @@
 
 .features-list li::before {
     content: '▶';
-    color: var(--matrix-green);
+    color: var(--text-secondary);
     position: absolute;
     left: 0;
     top: 0.5rem;
@@ -236,14 +230,11 @@
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--border-color);
-    transition: var(--transition);
     cursor: pointer;
 }
 
 .media-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-neon);
-    border-color: var(--neon-blue);
+    border-color: var(--text-secondary);
 }
 
 .media-content {
@@ -257,12 +248,6 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: var(--transition);
-}
-
-.media-item:hover .media-content img,
-.media-item:hover .media-content video {
-    transform: scale(1.05);
 }
 
 .media-overlay {
@@ -276,7 +261,7 @@
     align-items: center;
     justify-content: center;
     opacity: 0;
-    transition: var(--transition);
+    /* Instant response - no transition */
 }
 
 .media-item:hover .media-overlay {
@@ -284,7 +269,7 @@
 }
 
 .play-button {
-    background: var(--matrix-green);
+    background: var(--text-secondary);
     color: var(--primary-bg);
     border: none;
     border-radius: 50%;
@@ -295,12 +280,12 @@
     justify-content: center;
     font-size: 1.5rem;
     cursor: pointer;
-    transition: var(--transition);
+    /* Instant response - no transition */
 }
 
 .play-button:hover {
-    background: var(--neon-blue);
-    transform: scale(1.1);
+    background: var(--text-primary);
+    /* No transform for instant response */
 }
 
 .media-caption {
@@ -317,12 +302,11 @@
     padding: 2rem;
     border-radius: 12px;
     border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-glow);
     flex: 1;
 }
 
 .tech-stack h3 {
-    color: var(--neon-blue);
+    color: var(--text-primary);
     font-size: 1.3rem;
     margin-bottom: 1.5rem;
     font-weight: 600;
@@ -334,20 +318,14 @@
 }
 
 .tech-item {
-    background: rgba(0, 255, 65, 0.1);
-    color: var(--matrix-green);
+    background: var(--accent-bg);
+    color: var(--text-secondary);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-family: var(--font-mono);
     font-size: 0.9rem;
     text-align: center;
-    border: 1px solid rgba(0, 255, 65, 0.3);
-    transition: var(--transition);
-}
-
-.tech-item:hover {
-    background: rgba(0, 255, 65, 0.2);
-    transform: translateY(-2px);
+    border: 1px solid var(--border-color);
 }
 
 .architecture-info {
@@ -359,7 +337,7 @@
 }
 
 .architecture-info h3 {
-    color: var(--neon-blue);
+    color: var(--text-primary);
     font-size: 1.3rem;
     margin-bottom: 1.5rem;
     font-weight: 600;
@@ -389,9 +367,7 @@
 }
 
 .other-project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-neon);
-    border-color: var(--neon-blue);
+    border-color: var(--text-secondary);
 }
 
 .other-project-image {
@@ -403,11 +379,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: var(--transition);
-}
-
-.other-project-card:hover .other-project-image img {
-    transform: scale(1.05);
+    /* Instant response - no transition */
 }
 
 .other-project-info {
@@ -444,7 +416,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    animation: fadeIn 0.3s ease;
+    /* Instant response - no animation */
 }
 
 .lightbox-content {
@@ -481,13 +453,13 @@
     color: var(--text-primary);
     font-size: 2rem;
     cursor: pointer;
-    transition: var(--transition);
+    /* Instant response - no transition */
     z-index: 1001;
 }
 
 .lightbox-close:hover {
-    color: var(--matrix-green);
-    transform: scale(1.1);
+    color: var(--text-primary);
+    /* No transform for instant response */
 }
 
 .lightbox-caption {
@@ -509,9 +481,9 @@
 }
 
 .lightbox-nav button {
-    background: rgba(0, 255, 65, 0.2);
-    border: 1px solid var(--matrix-green);
-    color: var(--matrix-green);
+    background: var(--accent-bg);
+    border: 1px solid var(--text-secondary);
+    color: var(--text-secondary);
     border-radius: 50%;
     width: 50px;
     height: 50px;
@@ -519,15 +491,15 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: var(--transition);
+    /* Instant response - no transition */
     pointer-events: all;
     backdrop-filter: blur(10px);
 }
 
 .lightbox-nav button:hover {
-    background: var(--matrix-green);
+    background: var(--text-secondary);
     color: var(--primary-bg);
-    transform: scale(1.1);
+    /* No transform for instant response */
 }
 
 /* Responsive Design */
@@ -613,18 +585,10 @@
 
 /* === Collaborators Section === */
 .collaborators-section h3 {
-    color: var(--neon-purple);
+    color: var(--text-primary);
     font-size: 1.3rem;
     margin-bottom: 1.5rem;
     font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.collaborators-section h3::before {
-    content: "👥";
-    font-size: 1.1rem;
 }
 
 .collaborators-grid {
@@ -635,20 +599,10 @@
 
 /* === References Section === */
 .references-section h3 {
-    color: var(--neon-blue);
+    color: var(--text-primary);
     font-size: 1.3rem;
     margin-bottom: 1.5rem;
     font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.references-section h3::before {
-    content: "\f15b";
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    font-size: 1.1rem;
 }
 
 .references-list {
@@ -662,7 +616,6 @@
     padding: 1.5rem;
     border-radius: 12px;
     border: 1px solid var(--border-color);
-    transition: var(--transition);
     text-decoration: none;
     color: inherit;
     display: block;
@@ -670,9 +623,7 @@
 
 .reference-item:hover {
     background: var(--accent-bg);
-    border-color: var(--neon-blue);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.1);
+    border-color: var(--text-secondary);
 }
 
 .reference-header {
@@ -692,7 +643,7 @@
 
 .reference-type {
     background: var(--accent-bg);
-    color: var(--neon-blue);
+    color: var(--text-secondary);
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
     font-size: 0.8rem;
@@ -703,7 +654,7 @@
 }
 
 .reference-item:hover .reference-type {
-    background: var(--neon-blue);
+    background: var(--text-secondary);
     color: var(--primary-bg);
 }
 
@@ -716,7 +667,7 @@
 
 .reference-item:hover .external-link-icon {
     opacity: 1;
-    color: var(--neon-blue);
+    color: var(--text-secondary);
 }
 
 .collaborator-card {
@@ -724,7 +675,6 @@
     padding: 1.5rem;
     border-radius: 12px;
     border: 1px solid var(--border-color);
-    transition: var(--transition);
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -734,9 +684,7 @@
 
 .collaborator-card:hover {
     background: var(--accent-bg);
-    border-color: var(--neon-blue);
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 212, 255, 0.1);
+    border-color: var(--text-secondary);
 }
 
 .collaborator-avatar {
@@ -748,14 +696,13 @@
     align-items: center;
     justify-content: center;
     border: 2px solid var(--border-color);
-    transition: var(--transition);
     font-size: 1.2rem;
-    color: var(--neon-blue);
+    color: var(--text-secondary);
 }
 
 .collaborator-card:hover .collaborator-avatar {
-    border-color: var(--neon-blue);
-    background: var(--neon-blue);
+    border-color: var(--text-secondary);
+    background: var(--text-secondary);
     color: var(--primary-bg);
 }
 
@@ -785,7 +732,7 @@
 
 .collaborator-card:hover .github-icon {
     opacity: 1;
-    color: var(--neon-blue);
+    color: var(--text-secondary);
 }
 
 @media (max-width: 768px) {

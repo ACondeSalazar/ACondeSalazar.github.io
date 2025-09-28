@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ACondeSalazar - Computer Graphics Portfolio</title>
     
-    <!-- Favicon -->
      <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
 
     <link rel="stylesheet" href="styles.css">
@@ -15,13 +14,11 @@
 </head>
 <body>
     
-    <!-- Terminal-style header -->
     <header class="terminal-header">
         <div class="terminal-window">
             <div class="terminal-content">
                 <div class="output">
                     <div id="internship-banner" class="internship-banner" style="display: none;">
-                        <i class="fas fa-briefcase"></i>
                         <span id="internship-text">Currently seeking a 6-month end-of-study internship in computer graphics</span>
                     </div>
                     <h1>ACondeSalazar</h1>
@@ -31,183 +28,67 @@
         </div>
     </header>
 
-    <!-- Navigation -->
+
     <nav class="nav-bar">
         <div class="nav-container">
             <div class="nav-item active" data-section="projects">
-                <i class="fas fa-cube"></i> Projects
+                Projects
             </div>
             <div class="nav-item" data-section="about">
-                <i class="fas fa-user-astronaut"></i> About
+                About
             </div>
         </div>
     </nav>
 
     <!-- Main content -->
     <main class="main-content">
-        <!-- Projects Section -->
+
         <section id="projects" class="section active">
-            <div class="section-header">
-                <h2><i class="fas fa-terminal"></i> ./projects</h2>
-                <div class="loading-bar">
-                    <div class="loading-progress"></div>
-                </div>
-            </div>
-            
             <div class="projects-grid">
-                <!-- Project 1 - 3D Renderer -->
-                <article class="project-card" data-tech="OpenGL">
-                    <div class="project-image">
-                        <img src="assets/project1-thumb.jpg" alt="3D Renderer" loading="lazy">
-                        <div class="project-overlay">
-                            <button class="btn-view" data-project="renderer">
-                                <i class="fas fa-eye"></i> View Details
-                            </button>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Real-time 3D Renderer</h3>
-                        <p>Custom OpenGL renderer with PBR shading, shadow mapping, and post-processing effects.</p>
-                        <div class="tech-tags">
-                            <span class="tag">C++</span>
-                            <span class="tag">OpenGL</span>
-                            <span class="tag">GLSL</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 2 - Ray Tracer -->
-                <article class="project-card" data-tech="CUDA">
-                    <div class="project-image">
-                        <img src="assets/project2-thumb.jpg" alt="Ray Tracer" loading="lazy">
-                        <div class="project-overlay">
-                            <button class="btn-view" data-project="raytracer">
-                                <i class="fas fa-eye"></i> View Details
-                            </button>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>GPU Ray Tracer</h3>
-                        <p>Monte Carlo path tracer with global illumination, implemented on GPU using CUDA.</p>
-                        <div class="tech-tags">
-                            <span class="tag">CUDA</span>
-                            <span class="tag">C++</span>
-                            <span class="tag">OptiX</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 3 - Procedural Animation -->
-                <article class="project-card" data-tech="Unity">
-                    <div class="project-image">
-                        <img src="assets/project3-thumb.jpg" alt="Procedural Animation" loading="lazy">
-                        <div class="project-overlay">
-                            <button class="btn-view" data-project="animation">
-                                <i class="fas fa-eye"></i> View Details
-                            </button>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Procedural Character Animation</h3>
-                        <p>AI-driven character animation system using inverse kinematics and machine learning.</p>
-                        <div class="tech-tags">
-                            <span class="tag">Unity</span>
-                            <span class="tag">C#</span>
-                            <span class="tag">ML-Agents</span>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- Project 4 - Shader Effects -->
-                <article class="project-card" data-tech="WebGL">
-                    <div class="project-image">
-                        <img src="assets/project4-thumb.jpg" alt="Shader Effects" loading="lazy">
-                        <div class="project-overlay">
-                            <button class="btn-view" data-project="shaders">
-                                <i class="fas fa-eye"></i> View Details
-                            </button>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <h3>Interactive Shader Playground</h3>
-                        <p>Web-based shader editor with real-time compilation and visual effects library.</p>
-                        <div class="tech-tags">
-                            <span class="tag">WebGL</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">Three.js</span>
-                        </div>
-                    </div>
-                </article>
+                
             </div>
         </section>
 
-        <!-- About Section -->
         <section id="about" class="section">
-            <div class="section-header">
-                <h2><i class="fas fa-terminal"></i> ./about</h2>
-            </div>
-            
             <div class="about-content">
-                <div class="code-block">
-                    <div class="code-header">
-                        <span class="file-name">profile.json</span>
-                        <span class="file-type">JSON</span>
+                <div class="profile-info">
+                    <h3 class="profile-title">About me</h3>
+                    <div class="profile-section">
+                        <h3>Name</h3>
+                        <p id="profile-name">Name</p>
                     </div>
-                    <pre><code>{
-  "name": "ACondeSalazar",
-  "role": "Computer Graphics Student",
-  "location": "📍 Your Location",
-  "interests": [
-    "Real-time Rendering",
-    "Ray Tracing",
-    "Procedural Generation",
-    "Game Engine Development",
-    "Visual Effects"
-  ],
-  "skills": {
-    "languages": ["C++", "C#", "Python", "JavaScript", "GLSL"],
-    "graphics": ["OpenGL", "DirectX", "Vulkan", "WebGL"],
-    "tools": ["Unity", "Unreal", "Blender", "Maya"],
-    "frameworks": ["Three.js", "Dear ImGui", "Qt"]
-  },
-  "education": {
-    "degree": "Computer Graphics",
-    "status": "Student",
-    "focus": "Real-time rendering and visual effects"
-  }
-}</code></pre>
+                    
+                    <div class="profile-section">
+                        <h3>My Interests</h3>
+                        <ul id="profile-interests">
+                            <!-- Interests will be populated by JavaScript -->
+                        </ul>
+                    </div>
+                    
+                    <div class="profile-section">
+                        <h3>Languages</h3>
+                        <ul id="profile-languages">
+                            <!-- Languages will be populated by JavaScript -->
+                        </ul>
+                    </div>
+                    
+                    <div class="profile-section">
+                        <h3>Tools</h3>
+                        <ul id="profile-tools">
+                            <!-- Tools will be populated by JavaScript -->
+                        </ul>
+                    </div>
+                    
+                    <div class="profile-section">
+                        <h3>Education</h3>
+                        <div id="profile-education">
+                            <!-- Education will be populated by JavaScript -->
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="about-text">
-                    <h3>Hello, World!</h3>
-                    <p>I'm a passionate computer graphics student with a love for creating visually stunning and technically challenging projects. My work spans from low-level graphics programming to high-level visual effects, always pushing the boundaries of what's possible in real-time.</p>
-                    
-                    <p>When I'm not coding shaders or optimizing render pipelines, you can find me exploring new techniques in procedural generation, experimenting with ray tracing algorithms, or contributing to open-source graphics projects.</p>
-                    
                     <div class="contact-grid">
-                        <a href="https://github.com/ACondeSalazar" class="contact-card" target="_blank">
-                            <i class="fab fa-github"></i>
-                            <h4>GitHub</h4>
-                            <p>Check out my code</p>
-                        </a>
-                        
-                        <a href="https://linkedin.com/in/your-profile" class="contact-card" target="_blank">
-                            <i class="fab fa-linkedin"></i>
-                            <h4>LinkedIn</h4>
-                            <p>Professional network</p>
-                        </a>
-                        
-                        <a href="mailto:your.email@example.com" class="contact-card">
-                            <i class="fas fa-envelope"></i>
-                            <h4>Email</h4>
-                            <p>Get in touch</p>
-                        </a>
-                        
-                        <a href="#" class="contact-card">
-                            <i class="fas fa-file-pdf"></i>
-                            <h4>Resume</h4>
-                            <p>Download CV</p>
-                        </a>
                     </div>
                 </div>
             </div>

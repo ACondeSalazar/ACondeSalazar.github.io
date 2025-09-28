@@ -10,19 +10,16 @@ class ProjectDetailPage {
     }
 
     init() {
-        // Get project ID from URL parameters
         const urlParams = new URLSearchParams(window.location.search);
         const projectId = urlParams.get('project');
         
         if (projectId) {
             this.loadProject(projectId);
         } else {
-            // Redirect to main portfolio if no project specified
             window.location.href = 'index.html';
         }
 
         this.setupEventListeners();
-        // Matrix effect removed for cleaner design
     }
 
     loadProject(projectId) {
@@ -36,32 +33,24 @@ class ProjectDetailPage {
 
         this.populateProjectData();
         this.generateMediaGallery();
-        this.generateOtherProjects();
         this.updatePageMeta();
     }
 
     populateProjectData() {
         const project = this.currentProject;
 
-        // Update page title and breadcrumb
         document.getElementById('page-title').textContent = `${project.title} - ACondeSalazar`;
-        document.getElementById('project-breadcrumb').textContent = project.title;
 
-        // Header section
         document.getElementById('project-title').textContent = project.title;
-        document.getElementById('project-subtitle').textContent = project.shortDescription;
         document.getElementById('github-link').href = project.github;
 
-        // Set hero image (always use thumbnail)
         const heroImg = document.getElementById('hero-img');
         heroImg.src = project.thumbnail;
         heroImg.alt = project.title;
 
-        // Description
         const descriptionDiv = document.getElementById('project-description');
         descriptionDiv.innerHTML = `<p>${project.fullDescription}</p>`;
 
-        // Features list
         const featuresList = document.getElementById('features-list');
         if (project.features) {
             featuresList.innerHTML = project.features
@@ -69,16 +58,13 @@ class ProjectDetailPage {
                 .join('');
         }
 
-        // Technology stack
         const techStack = document.getElementById('tech-stack');
         techStack.innerHTML = project.technologies
             .map(tech => `<div class="tech-item">${tech}</div>`)
             .join('');
 
-        // Collaborators section
         this.renderCollaborators(project);
         
-        // References section
         this.renderReferences(project);
     }
 
@@ -106,7 +92,6 @@ class ProjectDetailPage {
                 <div class="collaborator-info">
                     <div class="collaborator-name">
                         ${collaborator.name}
-                        <i class="fab fa-github github-icon"></i>
                     </div>
                     <div class="collaborator-role">${collaborator.role}</div>
                 </div>
@@ -182,12 +167,10 @@ class ProjectDetailPage {
             <div class="media-caption">${mediaItem.caption}</div>
         `;
 
-        // Add click event to open in lightbox
         div.addEventListener('click', () => {
             this.openLightbox(index);
         });
 
-        // Auto-play videos on hover
         if (isVideo) {
             const video = div.querySelector('video');
             div.addEventListener('mouseenter', () => {
@@ -202,32 +185,7 @@ class ProjectDetailPage {
         return div;
     }
 
-    generateOtherProjects() {
-        const otherProjectsDiv = document.getElementById('other-projects');
-        const otherProjects = this.config.projects.filter(p => p.id !== this.currentProject.id);
-
-        otherProjectsDiv.innerHTML = otherProjects
-            .slice(0, 3) // Show max 3 other projects
-            .map(project => this.createOtherProjectCard(project))
-            .join('');
-    }
-
-    createOtherProjectCard(project) {
-        return `
-            <a href="project-detail.html?project=${project.id}" class="other-project-card">
-                <div class="other-project-image">
-                    <img src="${project.thumbnail}" alt="${project.title}">
-                </div>
-                <div class="other-project-info">
-                    <h4>${project.title}</h4>
-                    <p>${project.shortDescription}</p>
-                </div>
-            </a>
-        `;
-    }
-
     setupEventListeners() {
-        // Lightbox controls
         const lightbox = document.getElementById('lightbox');
         const lightboxClose = document.querySelector('.lightbox-close');
         const lightboxPrev = document.getElementById('lightbox-prev');
@@ -237,14 +195,12 @@ class ProjectDetailPage {
         lightboxPrev.addEventListener('click', () => this.navigateLightbox(-1));
         lightboxNext.addEventListener('click', () => this.navigateLightbox(1));
 
-        // Close lightbox on background click
         lightbox.addEventListener('click', (e) => {
             if (e.target === lightbox) {
                 this.closeLightbox();
             }
         });
 
-        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (lightbox.classList.contains('active')) {
                 switch(e.key) {
@@ -261,7 +217,6 @@ class ProjectDetailPage {
             }
         });
 
-        // Smooth scrolling for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -281,7 +236,6 @@ class ProjectDetailPage {
         const lightboxVideo = document.getElementById('lightbox-video');
         const lightboxCaption = document.getElementById('lightbox-caption');
 
-        // Reset media elements
         lightboxImg.style.display = 'none';
         lightboxVideo.style.display = 'none';
 
@@ -299,7 +253,6 @@ class ProjectDetailPage {
         lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
 
-        // Update navigation button states
         this.updateLightboxNavigation();
     }
 
@@ -310,7 +263,6 @@ class ProjectDetailPage {
         lightbox.classList.remove('active');
         document.body.style.overflow = 'auto';
         
-        // Pause video if playing
         if (!lightboxVideo.paused) {
             lightboxVideo.pause();
         }
@@ -338,7 +290,6 @@ class ProjectDetailPage {
     updatePageMeta() {
         const project = this.currentProject;
         
-        // Update meta tags for SEO and social sharing
         const metaDescription = document.querySelector('meta[name="description"]');
         if (metaDescription) {
             metaDescription.setAttribute('content', project.shortDescription);
@@ -349,8 +300,7 @@ class ProjectDetailPage {
             document.head.appendChild(meta);
         }
 
-        // Update Open Graph tags
-        this.updateMetaTag('og:title', `${project.title} - ACondeSalazar`);
+        this.updateMetaTag('og:title', `${project.title} - Arthur Conde Salazar`);
         this.updateMetaTag('og:description', project.shortDescription);
         this.updateMetaTag('og:image', project.thumbnail);
         this.updateMetaTag('og:url', window.location.href);
@@ -366,10 +316,9 @@ class ProjectDetailPage {
         meta.setAttribute('content', content);
     }
 
-    // Matrix effect removed for cleaner design
 }
 
-// Initialize when DOM is loaded
+
 document.addEventListener('DOMContentLoaded', () => {
     new ProjectDetailPage();
 });
