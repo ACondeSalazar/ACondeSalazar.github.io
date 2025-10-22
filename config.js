@@ -245,6 +245,54 @@ const PORTFOLIO_CONFIG = {
             featured: true
         },
         {
+            id: "raytracing",
+            title: "CPU Raytracer",
+            shortDescription: "A simple CPU raytracer implemented from scratch in C++",
+            fullDescription: "",
+            detailedDescription: [],
+            technologies: ["C++", "OpenGL"],
+            thumbnail: "assets/raytracing/raptor.png",
+            media: [
+                {
+                    type: "image",
+                    src: "assets/raytracing/two_light.png",
+                    caption: "Multiple light sources with shadows"
+                },
+                {
+                    type: "image",
+                    src: "assets/raytracing/refrac.png",
+                    caption: "Refraction"
+                },
+                {
+                    type: "image",
+                    src: "assets/raytracing/bunny_mirror.png",
+                    caption: "Reflection"
+                },
+                {
+                    type: "video",
+                    src: "assets/raytracing/cornell.mp4",
+                    caption: "Cornell box"
+                },
+                {
+                    type: "image",
+                    src: "assets/raytracing/interpolation.png",
+                    caption: "Mesh normals interpolation"
+                }
+            ],
+            features: [
+                "Shadows",
+                "Reflections",
+                "Refractions",
+                "Multiple light sources",
+                "Mesh normals Interpolation",
+                "Textures"
+            ],
+            collaborators: [],
+            references: [],
+            github: "https://github.com/ACondeSalazar/Raytracing_M1_S1",
+            featured: true
+        },
+        {
             id: "compression",
             title: "Image Compression App",
             shortDescription: "Implementation of compression algorithms imitating JPEG and JPEG2000",
