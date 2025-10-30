@@ -237,7 +237,7 @@ const PORTFOLIO_CONFIG = {
                 },
                 {
                     title: "Fast orientable aperiodic ocean synthesis using tiling and blending",
-                    url: "https://www.ubisoft.com/en-us/studio/laforge/news/5WHMK3tLGMGsqhxmWls1Jw/making-waves-in-ocean-surface-rendering-using-tiling-and-blending",
+                    url: "assets/ocean/LSG24.pdf",
                     type: "Paper"
                 }
             ],
