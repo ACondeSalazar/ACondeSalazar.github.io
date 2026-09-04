@@ -1,100 +1,34 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ACondeSalazar - Computer Graphics Portfolio</title>
-    
-     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
-
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <script src="config.js"></script>
-</head>
-<body>
-    
-    <header class="terminal-header">
-        <div class="terminal-window">
-            <div class="terminal-content">
-                <div class="output">
-                    <div id="internship-banner" class="internship-banner" style="display: none;">
-                        <span id="internship-text">Currently seeking a 6-month end-of-study internship in computer graphics</span>
-                    </div>
-                    <h1>ACondeSalazar</h1>
-                    <p class="subtitle">Computer Graphics Student & Digital Artist</p>
-                </div>
-            </div>
-        </div>
-    </header>
-
-
-    <nav class="nav-bar">
-        <div class="nav-container">
-            <div class="nav-item active" data-section="projects">
-                Projects
-            </div>
-            <div class="nav-item" data-section="about">
-                About
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main content -->
-    <main class="main-content">
-
-        <section id="projects" class="section active">
-            <div class="projects-grid">
-                
-            </div>
-        </section>
-
-        <section id="about" class="section">
-            <div class="about-content">
-                <div class="profile-info">
-                    <h3 class="profile-title">About me</h3>
-                    <div class="profile-section">
-                        <h3>Name</h3>
-                        <p id="profile-name">Name</p>
-                    </div>
-                    
-                    <div class="profile-section">
-                        <h3>My Interests</h3>
-                        <ul id="profile-interests">
-                            <!-- Interests will be populated by JavaScript -->
-                        </ul>
-                    </div>
-                    
-                    <div class="profile-section">
-                        <h3>Languages</h3>
-                        <ul id="profile-languages">
-                            <!-- Languages will be populated by JavaScript -->
-                        </ul>
-                    </div>
-                    
-                    <div class="profile-section">
-                        <h3>Tools</h3>
-                        <ul id="profile-tools">
-                            <!-- Tools will be populated by JavaScript -->
-                        </ul>
-                    </div>
-                    
-                    <div class="profile-section">
-                        <h3>Education</h3>
-                        <div id="profile-education">
-                            <!-- Education will be populated by JavaScript -->
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="about-text">
-                    <div class="contact-grid">
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <script src="script.js"></script>
-</body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta
+            name="description"
+            content="Arthur Conde Salazar’s graphics portfolio"
+        />
+        <title>Arthur Conde Salazar</title>
+        <link rel="icon" href="assets/favicon-32x32.png" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&amp;family=IBM+Plex+Mono:wght@400;500&amp;display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css?v=4" />
+    </head>
+    <body>
+        <div id="app"></div>
+        <dialog id="lightbox" aria-label="Media viewer">
+            <button id="close" aria-label="Close">×</button>
+            <figure>
+                <div id="lightbox-media"></div>
+                <figcaption class="label"></figcaption>
+                <nav>
+                    <button data-move="-1" aria-label="Previous">←</button
+                    ><button data-move="1" aria-label="Next">→</button>
+                </nav>
+            </figure>
+        </dialog>
+        <script src="data.js"></script>
+        <script src="main.js?v=3"></script>
+    </body>
 </html>

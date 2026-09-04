@@ -1,0 +1,174 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1800 1200" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <g id="compass8">
+      <path d="M0-48L9-20 34-34 20-9 48 0 20 9 34 34 9 20 0 48-9 20-34 34-20 9-48 0-20-9-34-34-9-20Z"/>
+      <circle r="35"/>
+      <circle r="7"/>
+    </g>
+    <g id="orb">
+      <circle r="42"/>
+      <ellipse rx="62" ry="19" transform="rotate(-24)"/>
+      <ellipse rx="62" ry="19" transform="rotate(24)"/>
+      <path d="M-52 0H52M0-52V52"/>
+      <circle r="6"/>
+    </g>
+    <g id="gate">
+      <rect x="-36" y="-36" width="72" height="72" transform="rotate(45)"/>
+      <circle r="34"/>
+      <circle r="17"/>
+      <path d="M-58 0H58M0-58V58"/>
+    </g>
+    <g id="eye">
+      <path d="M-52 0Q0-40 52 0Q0 40-52 0Z"/>
+      <circle r="15"/>
+      <circle r="4" fill="#c3a36d" stroke="none"/>
+    </g>
+    <g id="trident">
+      <path d="M0 50V-40M-24-18Q0 7 24-18M-24-18V-38M24-18V-38M-9 50H9"/>
+      <circle cy="-5" r="26"/>
+    </g>
+    <g id="crescent">
+      <circle r="29"/>
+      <path d="M11-27A29 29 0 0 0 11 27A22 22 0 0 1 11-27Z"/>
+      <path d="M-42 0H42"/>
+    </g>
+    <g id="hourglass">
+      <path d="M-25-32H25L-20 32H20L-25-32Z"/>
+      <circle cy="-40" r="4"/>
+      <circle cy="40" r="4"/>
+    </g>
+    <g id="key">
+      <circle cy="-20" r="17"/>
+      <path d="M0-3V36M0 21H16M0 31H11"/>
+    </g>
+    <g id="coil">
+      <path d="M22 0A22 22 0 1 1-17-14A15 15 0 1 1 12 8A8 8 0 1 1-5-3"/>
+      <path d="M-34 0H-22M22 0H34"/>
+    </g>
+    <g id="triad">
+      <circle cy="-18" r="13"/>
+      <circle cx="-16" cy="11" r="13"/>
+      <circle cx="16" cy="11" r="13"/>
+      <circle r="4"/>
+    </g>
+  </defs>
+
+  <g fill="none" stroke="#c3a36d" stroke-linecap="round" stroke-linejoin="round">
+    <g opacity=".13" stroke-width="1">
+      <path d="M-40 195C210 58 360 250 556 171S886 80 1050 180 1392 286 1840 102"/>
+      <path d="M-40 212C210 75 360 267 556 188S886 97 1050 197 1392 303 1840 119"/>
+      <path d="M-40 860C212 729 401 933 613 842S956 717 1162 836 1515 965 1840 797"/>
+      <path d="M-40 877C212 746 401 950 613 859S956 734 1162 853 1515 982 1840 814"/>
+      <path d="M142 0C76 220 268 333 164 536S62 868 224 1200"/>
+      <path d="M1658 0C1724 220 1532 333 1636 536S1738 868 1576 1200"/>
+      <path d="M116 342C430 487 364 684 625 764S1063 653 1284 757 1572 884 1691 1021" stroke-dasharray="3 10"/>
+      <path d="M109 1010C358 878 374 604 596 499S1009 570 1221 415 1505 188 1690 218" stroke-dasharray="1 12"/>
+    </g>
+
+    <g opacity=".18" stroke-width="1">
+      <circle cx="145" cy="260" r="179"/>
+      <circle cx="145" cy="260" r="158" stroke-dasharray="2 11"/>
+      <circle cx="145" cy="260" r="116"/>
+      <circle cx="145" cy="260" r="52"/>
+      <ellipse cx="145" cy="260" rx="132" ry="43" transform="rotate(-22 145 260)"/>
+      <ellipse cx="145" cy="260" rx="132" ry="43" transform="rotate(22 145 260)"/>
+      <ellipse cx="145" cy="260" rx="42" ry="116"/>
+      <path d="M-42 260H332M145 73V447"/>
+      <path d="M163 211A52 52 0 0 0 163 309A39 39 0 0 1 163 211Z"/>
+      <circle cx="145" cy="260" r="9"/>
+      <circle cx="145" cy="81" r="5" fill="#c3a36d" stroke="none"/>
+      <circle cx="324" cy="260" r="5" fill="#c3a36d" stroke="none"/>
+      <circle cx="145" cy="439" r="5" fill="#c3a36d" stroke="none"/>
+      <circle cx="13" cy="260" r="4" fill="#c3a36d" stroke="none"/>
+      <circle cx="267" cy="210" r="4" fill="#c3a36d" stroke="none"/>
+      <circle cx="23" cy="310" r="4" fill="#c3a36d" stroke="none"/>
+    </g>
+
+    <g opacity=".2" stroke-width="1">
+      <circle cx="1660" cy="350" r="185"/>
+      <circle cx="1660" cy="350" r="160" stroke-dasharray="25 8 2 8"/>
+      <circle cx="1660" cy="350" r="119"/>
+      <path d="M1427 350H1893M1660 117V583"/>
+      <path d="M1530 220L1790 480M1790 220L1530 480"/>
+      <ellipse cx="1660" cy="350" rx="160" ry="55" transform="rotate(-17 1660 350)"/>
+      <ellipse cx="1660" cy="350" rx="160" ry="55" transform="rotate(17 1660 350)"/>
+      <path d="M1541 350A119 119 0 0 0 1779 350A87 87 0 0 1 1541 350Z"/>
+      <circle cx="1660" cy="350" r="24"/>
+      <circle cx="1660" cy="350" r="7" fill="#c3a36d" stroke="none"/>
+      <path d="M1652 165l8-14 8 14M1652 535l8 14 8-14"/>
+    </g>
+
+    <g opacity=".17" stroke-width="1">
+      <circle cx="174" cy="1018" r="150"/>
+      <circle cx="174" cy="1018" r="128" stroke-dasharray="2 10"/>
+      <circle cx="174" cy="1018" r="82"/>
+      <path d="M-24 1018H372M174 820V1216"/>
+      <rect x="82" y="926" width="184" height="184" transform="rotate(45 174 1018)"/>
+      <path d="M174 888L287 1083H61Z"/>
+      <use href="#eye" transform="translate(174 1018) scale(.85)"/>
+    </g>
+
+    <g opacity=".16" stroke-width="1">
+      <circle cx="1638" cy="963" r="139"/>
+      <circle cx="1638" cy="963" r="116" stroke-dasharray="14 7 2 7"/>
+      <circle cx="1638" cy="963" r="74"/>
+      <path d="M1457 963H1819M1638 782V1144"/>
+      <path d="M1540 865L1736 1061M1736 865L1540 1061"/>
+      <use href="#compass8" transform="translate(1638 963) scale(1.25)"/>
+    </g>
+
+    <g opacity=".22" stroke-width="1.1">
+      <use href="#orb" transform="translate(370 594) scale(.68)"/>
+      <use href="#gate" transform="translate(1480 665) scale(.7)"/>
+      <use href="#compass8" transform="translate(454 867) scale(.6) rotate(12)"/>
+      <use href="#eye" transform="translate(1393 168) scale(.62) rotate(-9)"/>
+      <use href="#trident" transform="translate(1554 703) scale(.55)"/>
+      <use href="#orb" transform="translate(328 749) scale(.43)"/>
+      <use href="#gate" transform="translate(1425 829) scale(.42) rotate(18)"/>
+      <use href="#eye" transform="translate(388 102) scale(.38)"/>
+      <use href="#crescent" transform="translate(82 574) scale(.62) rotate(-18)"/>
+      <use href="#hourglass" transform="translate(253 548) scale(.5) rotate(9)"/>
+      <use href="#key" transform="translate(94 713) scale(.55) rotate(-12)"/>
+      <use href="#coil" transform="translate(257 683) scale(.55)"/>
+      <use href="#triad" transform="translate(105 828) scale(.48) rotate(20)"/>
+      <use href="#crescent" transform="translate(337 940) scale(.45) rotate(32)"/>
+      <use href="#hourglass" transform="translate(1536 106) scale(.48) rotate(-11)"/>
+      <use href="#key" transform="translate(1741 680) scale(.58) rotate(14)"/>
+      <use href="#coil" transform="translate(1605 644) scale(.46)"/>
+      <use href="#triad" transform="translate(1736 767) scale(.5) rotate(-18)"/>
+      <use href="#crescent" transform="translate(1496 905) scale(.5) rotate(-25)"/>
+      <use href="#hourglass" transform="translate(1760 1005) scale(.42) rotate(17)"/>
+      <use href="#gate" transform="translate(58 922) scale(.32) rotate(11)"/>
+      <use href="#orb" transform="translate(1514 1110) scale(.35) rotate(-8)"/>
+      <use href="#eye" transform="translate(1740 578) scale(.34) rotate(8)"/>
+      <use href="#trident" transform="translate(45 451) scale(.38) rotate(-8)"/>
+    </g>
+
+    <g opacity=".2" stroke-width="1">
+      <path d="M145 439C157 515 252 531 337 575"/>
+      <path d="M406 614C507 665 496 795 454 838"/>
+      <path d="M454 896C403 957 339 1002 324 1018"/>
+      <path d="M1690 218C1577 207 1480 187 1425 177"/>
+      <path d="M1415 197C1422 335 1460 507 1480 625"/>
+      <path d="M1514 680C1581 713 1640 755 1638 824"/>
+      <path d="M1393 202C1352 328 1369 527 1445 642" stroke-dasharray="4 9"/>
+      <path d="M370 635C321 695 300 852 174 868" stroke-dasharray="4 9"/>
+      <path d="M82 603C91 637 91 670 94 681M111 713C153 699 203 689 228 683"/>
+      <path d="M257 711C234 773 167 801 128 819M128 848C186 884 273 918 318 940"/>
+      <path d="M1536 134C1573 169 1612 194 1643 204M1727 535C1735 578 1739 622 1741 650"/>
+      <path d="M1713 767C1671 735 1643 692 1626 664M1587 672C1546 739 1520 826 1503 876"/>
+      <path d="M1514 939C1547 963 1572 978 1590 987M1681 1002C1709 1003 1734 1004 1743 1005"/>
+    </g>
+
+    <g opacity=".28" stroke-width="1">
+      <g transform="translate(335 534)"><circle r="9"/><path d="M-18 0H18M0-18V18"/></g>
+      <g transform="translate(475 809)"><circle r="9"/><path d="M-18 0H18M0-18V18"/></g>
+      <g transform="translate(1425 232)"><circle r="9"/><path d="M-18 0H18M0-18V18"/></g>
+      <g transform="translate(1473 605)"><circle r="9"/><path d="M-18 0H18M0-18V18"/></g>
+      <g transform="translate(1594 779)"><circle r="9"/><path d="M-18 0H18M0-18V18"/></g>
+      <path d="M55 63h54M82 36v54M1691 1104h54M1718 1077v54"/>
+      <circle cx="82" cy="63" r="7"/>
+      <circle cx="1718" cy="1104" r="7"/>
+    </g>
+  </g>
+</svg>
